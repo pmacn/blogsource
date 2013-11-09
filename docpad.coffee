@@ -54,8 +54,28 @@ docpadConfig = {
                 "/scripts/script.js"
                 "/scripts/google-analytics.js"
             ]
-
-
+            profiles: [
+                {
+                    name: 'StackOverflow'
+                    url: 'http://stackoverflow.com/users/1418063/pmacnaughton'
+                    icon: 'stackoverflow.svg'
+                }
+                {
+                    name: 'StackOverflow Careers'
+                    url: 'http://careers.stackoverflow.com/pmacnaughton'
+                    icon: 'careers.svg'
+                }
+                {
+                    name: 'GitHub'
+                    url: 'http://github.com/pmacn'
+                    icon: 'github.svg'
+                }
+                {
+                    name: 'LinkedIn'
+                    url: 'http://www.linkedin.com/in/pmacnaughton'
+                    icon: 'linkedin.svg'
+                }
+            ]
 
         # -----------------------------
         # Helper Functions
