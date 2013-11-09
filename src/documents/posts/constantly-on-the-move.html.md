@@ -12,6 +12,6 @@ I was managing to get stuff done and would surely have gotten the hang of it soo
 And it's all better now. I'm sitting in the warm fuzzy glow of [DocPad](http://docpad.org) with my choice of.. everything.  
 There will most likely be posts and stuff.
 
-The fact that the site is being built from scratch however means that the site will evolve over time and the look and feel might change quite frequently for a while.
+The fact that the site is being built from scratch however means that it will evolve over time and the look and feel might change quite frequently for a while.
 
 It could also be that I just really like moving, after all we have moved 5 times in the last 4 years and there's gonna be at least one more before too long.
