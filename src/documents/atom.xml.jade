@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+feed(xmlns="http://www.w3.org/2005/Atom")
+	title!= site.title
+	link(href="#{site.url}/atom.xml",rel="self")
+	link(href!=site.url)
+	updated!= site.date.toISOString()
+	id!= site.url
+	author
+		name!= site.author
+		email!= site.email
+
+	for postDocument in getCollection('posts').toJSON()
+		entry
+			title!= postDocument.title
+			link(href="#{site.url}/#{postDocument.url}")
+			updated!= postDocument.date.toISOString()
+			id!= site.url+'/'+postDocument.url
+			content(type="html")!= postDocument.contentRendered

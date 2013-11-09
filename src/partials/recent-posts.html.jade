@@ -1,0 +1,4 @@
+aside#recentposts.list-group
+    h3 Recent posts
+    for postDocument in getCollection('posts').toJSON()
+        a.list-group-item(href!=postDocument.url)!= postDocument.title
