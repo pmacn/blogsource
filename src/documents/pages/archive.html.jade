@@ -6,6 +6,8 @@ pageOrder: 2
 
 nav.linklist
     for document in getCollection('posts').toJSON()
-        li
-            span!= document.date.toDateString()
-            a(href!=document.url)!=document.title
+        a.list-group-item(href!=document.url)
+            h4.pull-left!= document.title
+            span.pull-right!= document.date.toDateString()
+            div.clearfix
+            
