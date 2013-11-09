@@ -118,7 +118,10 @@ docpadConfig = {
                 }
             ]
 
-
+    plugins:
+        ghpages:
+            deployRemote: 'target'
+            deployBranch: 'master'
 
     # =================================
     # DocPad Events
