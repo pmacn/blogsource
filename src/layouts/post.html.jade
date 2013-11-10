@@ -11,10 +11,11 @@ article#post.post.col-lg-9.pull-right
             noscript Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
     script.
         var disqus_shortname = 'macnaughton';
+        //var disqus_developer = 1;
 
-        // var disqus_developer = 1;
-        var disqus_identifier = '#{document.url)';
-        var disqus_url = '#{document.url)';
+        var disqus_identifier = '#{site.url + document.url}';
+        var disqus_url = '#{site.url + document.url}';
+        var disqus_title = '#{document.title}';
         var disqus_script = 'embed.js';
 
         (function () {
