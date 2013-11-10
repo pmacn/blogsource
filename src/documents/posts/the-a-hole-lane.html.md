@@ -3,7 +3,7 @@ type: post
 layout: post
 title: The a-hole lane
 date: 2013-11-06 09:40
-tags: []
+tags: ['life']
 ```
 
 I moved to a new town a few years back and within the first couple of weeks I came upon what I came to call the A-hole lane.

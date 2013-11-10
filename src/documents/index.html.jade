@@ -4,11 +4,15 @@ title: 'Home'
 referencesOthers: true
 ---
 
-for post in getCollection('posts').toJSON()
-    a(href!= post.url)
-        h2!= post.title
-    if hasIngress(post)
-        p!= getIngress(post)
-
-    p.text-right
-        a(href!= post.url) read more
+each post, index in getCollection('posts').toJSON().slice(0,9)
+    .post-excerpt.col-sm-6.col-lg-4
+        a(href!= post.url)
+            h2!= post.title
+        if hasIngress(post)
+            p!= getIngress(post)
+        p.text-right
+            a(href!= post.url) read more
+    if (index + 1) % 2 == 0
+        .clearfix.visible-sm.visible-md
+    if (index + 1) % 3 == 0
+        .clearfix.visible-lg

@@ -1,5 +1,5 @@
 aside.list-group
-    h3 Peter also uses
+    h3 Find me on
     for profile in site.profiles
         a(href!= profile.url,target="_blank")
-            img.profile-icon.img-thumbnail(src="/images/#{profile.icon}",alt!= profile.name)
+            img.profile-icon.img-thumbnail(src="/images/#{profile.icon}",alt!= profile.name, title!= profile.name)

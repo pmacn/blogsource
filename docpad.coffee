@@ -38,12 +38,12 @@ docpadConfig = {
 
             # Styles
             styles: [
-                "/styles/twitter-bootstrap.css"
-                "/styles/codehighlight.css"
-                "/styles/style.css"
                 "http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
                 "http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
                 "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+                "/styles/twitter-bootstrap.css"
+                "/styles/codehighlight.css"
+                "/styles/style.css"
             ]
 
             # Scripts

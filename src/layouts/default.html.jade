@@ -35,35 +35,29 @@ html(lang="en")
         != getBlock('styles').add(site.styles).toHTML()
 
     body
+        .navbar.navbar-default.navbar-fixed-top
+            .navbar-header
+                button.navbar-toggle(type="button",data-toggle="collapse",data-target=".navbar-collapse")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href="/") MacNaughton
+
+            .navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    for pageDocument in getCollection('pages').toJSON()
+                        - var active = pageDocument.url == document.url
+                        li(typeof="sioc:Page",about!= pageDocument.url, class!=active?'active':'')
+                            a(href!= pageDocument.url,property="dc:title")!= pageDocument.title
         #wrap
-            //- Menu
-            .navbar.navbar-inverse.navbar-fixed-top
-                .container
-                    .navbar-header
-                        button.navbar-toggle(type="button",data-toggle="collapse",data-target=".navbar-collapse")
-                            span.icon-bar
-                            span.icon-bar
-                               span.icon-bar
+            section#content.content.col-md-9!= content
+            section#asides.container.col-md-3
+                != partial('profiles')
 
-                        a.navbar-brand(href="/") MacNaughton
-
-                    .navbar-collapse.collapse
-                        ul.nav.navbar-nav
-                            for pageDocument in getCollection('pages').toJSON()
-                                - var activeClass = (pageDocument.url == document.url ? 'active' : '')
-                                li(typeof="sioc:Page",about!= pageDocument.url, class!= activeClass)
-                                    a(href!= pageDocument.url,property="dc:title")!= pageDocument.title
-
-            .container
-                section#content.content.col-md-9!= content
-                section#asides.container.col-md-3
-                    != partial('recent-posts')
-                    != partial('profiles')
-
-        footer#sitefooter
+        .clearfix
+        footer#sitefooter.text-muted
             p.pull-left &copy; Peter MacNaughton #{(new Date()).getFullYear()}
             p.pull-right This website was last updated at #{ site.date.toISOString() }
-            div.clearfix
 
         //- Scripts
         != getBlock('scripts').add(site.scripts).toHTML()
