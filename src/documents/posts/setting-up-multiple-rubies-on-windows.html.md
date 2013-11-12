@@ -21,7 +21,7 @@ Download all of the DevKits required for your different Ruby installs from the [
 
 While downloading the DevKits you can open up a PowerShell and set the [execution policy](http://technet.microsoft.com/library/hh847748.aspx) so that you can run scripts. This isn't needed until later but we might as well get it out of the way.
 
-```
+``` bash
 PS C:\> Set-ExecutionPolicy Unrestricted -Scope CurrentUser
 ```
 
@@ -31,14 +31,14 @@ Extract the DevKit to its own folder. _(e.g. C:\Ruby\DevKit-mingw64-4.7.2 or C:\
 
 Back to our PowerShell so we can initialize the DevKit installation
 
-```
+``` bash
 PS C:> cd Ruby\DevKit-mingw64-4.7.2
 PS C:\Ruby\DevKit-mingw64-4.7.2> ruby .\dk.rb init  
 ```
 
 Chances are that the initialization didn't go as intended so open up config.yml in a text editor. (yay notepad!)
 
-```
+``` bash
 PS C:\Ruby\DevKit-mingw64-4.7.2> notepad config.xml
 ```
 
@@ -47,13 +47,13 @@ _Note the forward-slashes and the leading dash and space_
 
 For instance, if the DevKit is for 2.0.0 x64
 
-```
+``` bash
 - C:/Ruby/Ruby200-x64
 ```
 
 or if the DevKit is for 1.8.7 and 1.9.3
 
-```
+``` bash
 - C:/Ruby/Ruby187
 - C:/Ruby/Ruby193
 ```
@@ -62,7 +62,7 @@ Once you've made sure that the file contains the right paths, save any changes a
 
 Then you can finally install the DevKit
 
-```
+``` bash
 PS C:\Ruby\DevKit-mingw64-4.7.2> ruby .\dk.rb install
 ```
 
@@ -70,7 +70,7 @@ _And now to the hero of our little drama..._
 #Pik to the rescue!#
 We begin by installing the Pik gem
 
-```
+``` bash
 PS C:\> gem install pik
 --- output snipped ---
 1 gem installed
@@ -78,21 +78,21 @@ PS C:\> gem install pik
 
 Now find a good spot for Pik to live and install it there (I usually put it in C:\Ruby\Pik)
 
-```
+``` bash
 PS C:\> pik_install C:\Ruby\Pik
 ```
 
 At this point Pik will warn you that the installation path is not in your PATH variable, so lets fix that.
 
-```
+``` bash
     PS C:\> [environment]::SetEnvironmentVariable("PATH", "C:\Ruby\Pik;" + [environment]::GetEnvironmentVariable("PATH", "Machine"), "Machine")
 ```
 
-_Since that's quite a mouthful you might want to create a [function](/blog/posts/2013/11/07/ for that some day_
+_Since that's quite a mouthful you might want to create a [function](/posts/hardest-way-to-set-a-path/) for that some day_
 
-Now that Pik is ready to go, lets see what we have
+Now that Pik is ready to go, lets see what it has to say
 
-```
+``` bash
 PS C:> pik info
 pik 0.2.8
 
@@ -102,26 +102,25 @@ version:      "1.9.3"
 --- output snipped ---
 ```
 
-If Pik complains that you **do not have** a ruby version in your PATH you might want to go add one now for the version that you want to be your default.  
-If Pik instead warns you that you have **more than one** Ruby installation in your PATH variable, you should go remove all but the one you want as you default.  
+If Pik complains that you do not have a ruby version in your PATH you might want to go add one now for the version that you want to be your default.  
+If Pik instead warns you that you have more than one Ruby installation in your PATH variable, you should go remove all but the one you want as you default.  
 This is why we only installed one of the Ruby versions with the _Add Ruby executables to your PATH_ option.
 
-If instead you see something more like this?
+If you have installed pik before you might see something like this?
 
-```
-There was an error.
-Error: undefined method `[]' for nil:NilClass
+<code>There was an error.  
+Error: undefined method `[]' for nil:NilClass</code>
+
+If this is the case, remove your Ruby installations from Pik and re-add them. To see installations already added to Pik use the list command.
+
+``` bash
+PS C:> pik list
+* 193: ruby 1.9.3p448 (2013-06-27) [i386-mingw32]
 ```
 
-or
+Then remove and add them
 
-```
-Pik info will not work unless there is a version of ruby in the path.
-```
-
-Remove your default Ruby installations from Pik and re-add it, or your selected installation if you've already switched.
-
-```
+``` no-highlight
 PS C:> pik rm 193
 Are you sure you'd like to remove '193: ruby 1.9.3p448 (2013-06-27) [i386-mingw32]'?  |yes|
 yes
@@ -132,26 +131,10 @@ PS C:> pik add C:\Ruby\Ruby193\bin
 Located at:  C:\Ruby\Ruby193\bin
 ```
 
-If you need to see installations added to Pik so you know which ones to remove or add, use the following
+Once <code>pik info</code> returns actual information about one of your ruby installations, you can add the other ones.  
+When you have added all your ruby installations to pik you can switch versions like this.
 
-```
-PS C:> pik list
-* 193: ruby 1.9.3p448 (2013-06-27) [i386-mingw32]
-```
-
-And now we need to add the other ones as well
-
-```
-PS C:\> pik add C:\Ruby\Ruby187\bin
-** Adding:  187: ruby 1.8.7 (2013-06-27 patchlevel 374) [i386-mingw32]
-Located at:  C:\Ruby\Ruby187\bin
-```
-
-_Note that we're referencing the ./bin folder for each Ruby installation and not the root installation folder._
-
-Once you have added all your Ruby versions to Pik you can switch version like this
-
-```
+``` bash
 PS C:\> pik use 200
 ```
 

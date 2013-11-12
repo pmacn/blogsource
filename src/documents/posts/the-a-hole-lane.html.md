@@ -7,8 +7,8 @@ tags: ['life']
 ```
 
 I moved to a new town a few years back and within the first couple of weeks I came upon what I came to call the A-hole lane.
- 
-Picture an intersection with two lanes going your direction; Then shortly after the intersection the right lane ends and has to merge into the left lane. My immediate reaction to this was that anyone who came up in the right hand lane was a jerk.<!-- read more -->
+
+ Picture an intersection with two lanes going your direction; Then shortly after the intersection the right lane ends and has to merge into the left lane. My first reaction to this was that anyone going in the right hand lane was a jerk.<!-- read more -->
  
 This was an intersection where you might sit through a few light changes (which is quite rare in a smaller town) and going through the right lane usually meant you didn’t have to. You would also pass quite a lot of people.
  

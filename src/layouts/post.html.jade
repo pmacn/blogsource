@@ -2,9 +2,21 @@
 layout: default
 ---
 
-article#post.post.col-lg-9.pull-right
+article#post.post.col-lg-9.col-xs-12.pull-right
     h1!= document.title
     .post-content!= content
+
+aside.post.col-lg-3.col-xs-12.pull-right
+    if document.relatedDocuments && document.relatedDocuments.length > 0
+        section#related
+            h3 Related Posts
+            nav.linklist
+                for relatedDocument in document.relatedDocuments
+                    li
+                        span!= relatedDocument.date.toDateString()
+                        a(href!= relatedDocument.url)!= relatedDocument.title
+
+.post.col-lg-9.col-xs-12.pull-right
     section
         h1 Comments
         #disqus_thread(aria-live="polite")
@@ -23,13 +35,3 @@ article#post.post.col-lg-9.pull-right
             dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
-
-aside.post.col-lg-3.pull-right
-    if document.relatedDocuments && document.relatedDocuments.length > 0
-        section#related
-            h3 Related Posts
-            nav.linklist
-                for relatedDocument in document.relatedDocuments
-                    li
-                        span!= relatedDocument.date.toDateString()
-                        a(href!= relatedDocument.url)!= relatedDocument.title
