@@ -25,7 +25,7 @@ While downloading the DevKits you can open up a PowerShell and set the [executio
 PS C:\> Set-ExecutionPolicy Unrestricted -Scope CurrentUser
 ```
 
-_**Repeat the following procedure for each DevKit that you are installing**_
+####Repeat the following procedure for each DevKit that you are installing####
 
 Extract the DevKit to its own folder. _(e.g. C:\Ruby\DevKit-mingw64-4.7.2 or C:\Ruby\DevKit-tdm-32-4.5.2\)_
 

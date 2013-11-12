@@ -6,21 +6,21 @@ date: 2013-11-07 20:49
 tags: ['powershell']
 ```
 
-In a [previous post](/blog/2013/11/07/multiple-rubies-on-windows/index.html) I hacked together a cumbersome Powershell statement when I tried to set a path from the shell in a way that anyone could use. And it had to be persistent.
+In a [previous post](/posts/setting-up-multiple-rubies-on-windows/) I hacked together a cumbersome Powershell statement when I tried to set a path from the shell in a way that anyone could use. And it also had to be persistent.
 
-Using $env:Path only sets the path for that session so it wasn't an option since it would leave people hanging when they restarted the shell.<!-- read more -->
+Using <code>$env:Path</code> only sets the path for that session so it wasn't an option since it would leave people hanging when they restarted the shell.<!-- read more -->
 
 It kinda stumped me for a while because I found it disturbingly ugly but didn't want to go off on a tangent to set up a function. So here is that tangent!
     
 Open up powershell and set your execution policy unless you've already done so.
 
-```
+``` no-highlight
 PS C:\> Set-ExecutionPolicy Unrestricted -Scope CurrentUser
 ```
 
 then enter
 
-```
+``` no-highlight
 PS C:> $profile
 ```
 
@@ -73,7 +73,7 @@ function Remove-Path {
 
 Now adding and removing a path to your PATH variable is as easy as
 
-```
+``` no-highlight
 PS C:> Remove-Path C:\MyOldPath
 PS C:> Add-Path C:\MyNewPath
 ```

@@ -56,8 +56,8 @@ html(lang="en")
 
         .clearfix
         footer#sitefooter.text-muted
-            p.pull-left &copy; Peter MacNaughton #{(new Date()).getFullYear()}
-            p.pull-right This website was last updated at #{ site.date.toISOString() }
+            p.pull-left Content is &copy; Peter MacNaughton #{(new Date()).getFullYear()}
+            p.pull-right This website was last updated on #{ site.date.toDateString() }
 
         //- Scripts
         != getBlock('scripts').add(site.scripts).toHTML()
