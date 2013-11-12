@@ -2,11 +2,11 @@
 layout: default
 ---
 
-article#post.col-xs-12.post.col-lg-9.pull-right
+article#post.col-xs-12.post.col-lg-8.pull-right
     h1!= document.title
     .post-content!= content
 
-aside.col-xs-12.col-lg-3.pull-right
+aside.col-xs-12.col-lg-4.pull-right
     if document.relatedDocuments && document.relatedDocuments.length > 0
         section#related
             h1 Related posts
@@ -14,7 +14,7 @@ aside.col-xs-12.col-lg-3.pull-right
                 a(href!= relatedDocument.url)!= relatedDocument.title
                 span!= relatedDocument.date.toDateString()
 
-section.col-xs-12.col-lg-9.pull-right
+section.col-xs-12.col-lg-8.pull-right
     h1 Comments
     #disqus_thread(aria-live="polite")
         noscript Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>

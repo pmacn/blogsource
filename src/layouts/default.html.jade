@@ -50,8 +50,8 @@ html(lang="en")
                         li(typeof="sioc:Page",about!= pageDocument.url, class!=active?'active':'')
                             a(href!= pageDocument.url,property="dc:title")!= pageDocument.title
         #wrap
-            section#content.content.col-md-9.col-xs-12!= content
-            section#asides.container.col-md-3.col-xs-12
+            section#content.content.col-xs-12.col-md-9!= content
+            section#asides.container.col-xs-12.col-md-3
                 != partial('profiles')
 
         .clearfix
